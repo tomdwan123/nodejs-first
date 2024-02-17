@@ -1,1 +1,8 @@
-[{"title":"a"},{"title":"b"},{"title":"c"},{"title":"d"},{"title":"a"},{"title":"e"},{"title":"a"},{"title":"t"},{"title":"xxx"},{"title":"yyy"}]
+[
+  {
+    "title": "A Book",
+    "imageUrl": "https://tse4.mm.bing.net/th?id=OIP.YVeNZFOMXLyj8oUGwTBUEQHaEo&pid=Api&P=0&h=220",
+    "description": "This is an awesome book",
+    "price": "19"
+  }
+]
