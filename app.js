@@ -1,17 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const errorsController = require("./controllers/errors");
-const db = require("./utils/database");
+const sequelize = require("./utils/database");
 const path = require("path");
 const handleHbs = require("express-handlebars");
-
-db.execute("SELECT * FROM products")
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 const app = express();
 app.engine(
@@ -38,4 +30,10 @@ app.use(shopRoutes);
 
 app.use(errorsController.get404);
 
-app.listen(3000);
+sequelize
+  .sync()
+  .then((result) => {
+    console.log(result);
+    app.listen(3000);
+  })
+  .catch((err) => console.log(err));
